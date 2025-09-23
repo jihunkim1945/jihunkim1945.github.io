@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'costom-font';
+    src: url('ABCFavorit-Black-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: orange;
+}
+body {
+    font-family: 'costom-font', Helvetica, sans-serif;
+}
+#first-sentence{
+    font-weight: bold;
+    font-size: 30px;
+}
+p {
+    color: white;
+    font-size: 12px;
+    font-weight: lighter;
+}
+img {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
