@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: orange;
+    background-color: #FE7F2D;
 } 
 body {
     font-family: 'costom-font', Helvetica, sans-serif;
@@ -15,6 +15,7 @@ body {
     font-weight: bold;
     font-size: 30px;
     font-style:italic;
+    font-family: serif;
 }
 p {
     color: rgb(254, 253, 253);
@@ -26,7 +27,7 @@ p {
 }
 .canada{
     position: relative;
-    left: 40%;
+    left: 60%;
     bottom: 20%;
 }
 img{
@@ -34,5 +35,6 @@ img{
     height: auto;
     display: block;
     margin: 20px auto;
-   
+   position: relative;
+   left:-30%
 }
