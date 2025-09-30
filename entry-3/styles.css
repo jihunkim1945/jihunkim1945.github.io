@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'costom-font';
-    src: url('ABCFavorit-Black-Trial.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'custom-font';
+  src: url('../SaansCollectionVF-TRIAL.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
 }
+
 body {
     background-color: orange;
-}
+} 
 body {
     font-family: 'costom-font', Helvetica, sans-serif;
 }
@@ -16,13 +17,22 @@ body {
     font-style:italic;
 }
 p {
-    color: white;
+    color: rgb(254, 253, 253);
     font-size: 12px;
     font-weight: lighter;
+    display: block;
+    margin: auto
+
 }
-img {
+.canada{
+    position: relative;
+    left: 40%;
+    bottom: 20%;
+}
+img{
     width: 500px;
     height: auto;
     display: block;
     margin: 20px auto;
+   
 }
