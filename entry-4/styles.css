@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'custom-font';
+  src: url('../SaansCollectionVF-TRIAL.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+    background-color: #FE7F2D;
+} 
+body {
+    font-family: 'costom-font', Helvetica, sans-serif;
+}
+#first-sentence{
+    font-weight: bold;
+    font-size: 30px;
+    font-style:italic;
+    font-family: serif;
+}
+p {
+    color: rgb(254, 253, 253);
+    font-size: 12px;
+    font-weight: lighter;
+    display: block;
+    margin: auto
+
+}
+.canada{
+    position: relative;
+    left: 60%;
+    bottom: 20%;
+}
+img{
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+   position: relative;
+   left:-30%
+}
+.box{
+    background-color:#233D4D;
+    width:250px;
+    height:1000px;
+    position:relative;
+    left: -500px;
+    top: -100px;
+}
+
+.ta-da {
+  position: fixed;
+  background-color: #233D4D;
+  height: 100vh;
+  width: 100vh;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  line-height: 100vh;
+  text-align: center;
+  display: none;
+  color:aliceblue
+}
+
+.box:hover .ta-da {
+    display: block;
+}
+  
