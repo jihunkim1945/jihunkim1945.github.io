@@ -1,0 +1,37 @@
+body {
+    background-color: #233D4D;
+}
+#the-stranger{
+    font-family: 'costom-font', Helvetica, sans-serif;
+    color: #FE7F2D;
+    font-size: 70px;
+    position: absolute;
+    margin: auto;
+    width: 60%;
+    display: block;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    padding:24px;
+box-sizing:border-box;
+background:#233D4D;
+}
+.row{ color:#f5efe7; font-weight:800; font-size:70px; line-height:1.1; white-space:nowrap; margin:8px 0; }
+
+
+ @media screen and (max-width: 700px) {
+  html {
+    font-size: 40px;
+  }
+  
+  body {
+    background-color: #FE7F2D;
+  }
+  #the-stranger{
+    font-size: 40px;
+    color:black;
+    background-color: #FE7F2D;
+  }
+
+  
+ }

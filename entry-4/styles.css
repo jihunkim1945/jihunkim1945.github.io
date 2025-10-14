@@ -45,6 +45,7 @@ img{
     position:relative;
     left: -500px;
     top: -100px;
+    transition:5s
 }
 
 .ta-da {
@@ -59,10 +60,12 @@ img{
   line-height: 100vh;
   text-align: center;
   display: none;
-  color:aliceblue
+  color:aliceblue;
+
 }
 
 .box:hover .ta-da {
     display: block;
+    
 }
   
