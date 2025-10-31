@@ -1,37 +1,90 @@
-body {
-    background-color: #233D4D;
+:root {
+  --navy: #233D4D;
+  --ivory: #F5EFE7;
+  --orange: #FE7F2D;
 }
-#the-stranger{
-    font-family: 'costom-font', Helvetica, sans-serif;
-    color: #FE7F2D;
-    font-size: 70px;
-    position: absolute;
-    margin: auto;
-    width: 60%;
-    display: block;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    padding:24px;
-box-sizing:border-box;
-background:#233D4D;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.row{ color:#f5efe7; font-weight:800; font-size:70px; line-height:1.1; white-space:nowrap; margin:8px 0; }
+
+html, body {
+  height: 100%;
+  background:
+    radial-gradient(1200px 600px at 50% 15%,
+      rgba(254,127,45,0.25) 0%,
+      rgba(254,127,45,0.08) 30%,
+      rgba(254,127,45,0.02) 60%,
+      rgba(0,0,0,0) 100%
+    ),
+    #233D4D;
+  color: #F5EFE7;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 0;
+}
+
+.col {
+  width: 100%;
+  text-align: justify;
+  padding: 0 40px;
+}
+
+.hover-box {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay img {
+  width: min(75vw, 950px);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.hover-box:hover .overlay {
+  opacity: 1;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 
- @media screen and (max-width: 700px) {
-  html {
-    font-size: 40px;
-  }
-  
-  body {
-    background-color: #FE7F2D;
-  }
-  #the-stranger{
-    font-size: 40px;
-    color:#233D4D;
-    background-color: #FE7F2D;
-  }
 
-  
- }
+
+

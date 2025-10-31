@@ -1,28 +1,59 @@
-@font-face {
-    font-family: 'costom-font';
-    src: url('ABCFavorit-Black-Trial.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-body {
-    background-color: orange;
-}
-body {
-    font-family: 'costom-font', Helvetica, sans-serif;
-}
-#first-sentence{
-    font-weight: bold;
-    font-size: 30px;
-    font-style:italic;
-}
-p {
-    color: white;
-    font-size: 12px;
-    font-weight: lighter;
-}
-img {
-    width: 500px;
-    height: auto;
+  body {
+    background-color: #233D4D; 
+    color: #F5EFE7;
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    font-size: 2rem; 
+    transform: scale(1.2);
+  }
+
+  th, td {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 24px 40px; 
+    text-align: left;
+  }
+
+  a {
+    color: #F5EFE7;
+    text-decoration: none;
     display: block;
-    margin: 20px auto;
-}
+  }
+
+  a:hover {
+    color: #FF742B;
+    background: rgba(255,116,43,0.15);
+  }
+
+  .image {
+    position: absolute;
+    width: 400px; 
+    height: 400px;
+    object-fit: cover;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    filter: grayscale(100%);
+    pointer-events: none;
+  }
+
+  .back {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    color: #F5EFE7;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .back:hover {
+    color: #FF742B;
+  }
