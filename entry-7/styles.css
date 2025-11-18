@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  background: #233D4D;
+  color: #F5EFE7;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---- HERO ---- */
+
+.hero {
+  position: relative;
+  height: 80vh;
+  padding: 40px 20px;
+
+  /* 👉 여기서 히어로 이미지 한 장 고정 */
+  background-image: url("(20).jpeg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+/* 가운데 해가 뜨는 것 같은 그라데이션 */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* 가운데 밝고 주변 어두운 radial-gradient */
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.45),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+.hero-inner {
+  position: relative; /* overlay 위에 올라오게 하려고 */
+  max-width: 70ch;    /* 한 줄 길이 적당히 제한 */
+}
+
+/* 제목 */
+h1 {
+  font-size: 40px;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+
+.title-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+
+.title-image {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  display: none; 
+}
+
+
+.title-image img {
+  display: block;
+  width: 1000px;  
+  height: auto;
+  
+}
+
+
+.title-wrap:hover .title-image {
+  display: block;
+}
+
+
+.hero p {
+  margin: 0;
+}
+
+
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 60px;
+  background: #233D4D;
+}
+
+article {
+  max-width: 70ch;
+}
+
+p {
+  margin: 14px 0;
+}
