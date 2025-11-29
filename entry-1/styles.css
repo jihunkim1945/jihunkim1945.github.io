@@ -21,3 +21,10 @@
   .quote{color:var(--cream); font-style:italic; margin:8px 0 0 0;}
   .left img { pointer-events: none; }
 
+.hint {
+  font-size: 12px;
+  margin-top: 4px;
+}
+.photo-block img:hover {
+  outline: 1px solid orange;
+}
