@@ -1,0 +1,114 @@
+:root{
+  --bg:#233D4D;
+  --text:#F5EFE7;
+  --accent:#FE7F2D;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+.page{
+  min-height:200vh;          /* 스크롤 여유 */
+}
+
+/* -------- 위: 큰 텍스트 벽 -------- */
+
+.text-wall{
+  padding:60px 20px 80px;
+  font-size:clamp(22px, 3.6vw, 40px);   /* 화면 꽉 채우는 큰 글자 */
+  line-height:1.15;
+  max-width:none;                        /* 처음에는 폭 제한 없음 */
+}
+
+.text-wall h1{
+  margin:0 0 18px;
+  font-size:clamp(32px, 4.2vw, 52px);
+}
+
+/* -------- 아래: 정리된 내러티브 -------- */
+
+.narrative{
+  max-width:70ch;
+  margin:0 auto 80px;
+  padding:32px 20px 60px;
+  font-size:18px;
+  line-height:1.6;
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .4s ease, transform .4s ease;
+}
+
+/* 스크롤을 내려서 page에 compact 클래스가 붙으면 레이아웃 바뀜 */
+
+.page.compact .text-wall{
+  max-width:70ch;
+  margin:0 auto;
+  font-size:clamp(18px, 2.4vw, 28px);
+}
+
+.page.compact .text-wall h1{
+  font-size:clamp(26px, 3vw, 36px);
+}
+
+.page.compact .narrative{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* -------- I 글자 스타일 -------- */
+
+/* 속 비우고 테두리만 있는 I */
+.letter-i{
+  -webkit-text-stroke:1px var(--text);
+  color:transparent;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* 호버하면 채워짐 + 살짝 하이라이트 */
+.letter-i:hover{
+  color:var(--text);
+  background:rgba(254,127,45,0.16);
+}
+
+/* -------- 호버 이미지 -------- */
+
+.hover-photo{
+  position:fixed;
+  display:none;           /* 기본은 숨김 */
+  pointer-events:none;    /* 이미지 위에 마우스 올라가도 방해 안 되게 */
+  z-index:1000;
+  border:1px solid rgba(245,239,231,0.8);
+  background:#000;
+}
+
+.hover-photo img{
+  display:block;
+  max-width:220px;
+  max-height:220px;
+  object-fit:cover;
+}
+
+/* show 클래스가 붙으면 보여주기 */
+.hover-photo.show{
+  display:block;
+}
+
+@media (max-width:720px){
+  .text-wall{
+    padding:40px 14px 60px;
+  }
+  .narrative{
+    padding:24px 14px 40px;
+  }
+  .hover-photo img{
+    max-width:180px;
+    max-height:180px;
+  }
+}

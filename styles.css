@@ -41,3 +41,9 @@
     opacity: 0.7;
     cursor: pointer;
   }
+  .grid div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.15s ease-out;  /* ← 이것만 추가 */
+}
