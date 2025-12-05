@@ -28,3 +28,45 @@
 .photo-block img:hover {
   outline: 1px solid orange;
 }
+
+
+
+
+.enter-img {
+  display: inline-block;
+  position: relative;
+  overflow: hidden; /* 확대돼도 박스 밖으로 안 넘치게 */
+  border-radius: 0; /* 브루탈리즘 스타일이라 둥근 모서리 없음 */
+  cursor: pointer;
+}
+
+.enter-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: 
+    transform 0.35s cubic-bezier(.25,.46,.45,.94),
+    filter 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* HOVER 효과 */
+.enter-img:hover img {
+  transform: scale(1.35);        /* 크게 확대 */
+  filter: contrast(140%) brightness(120%); /* 대비·밝기 증가 */
+  opacity: 0.9;                  /* 아주 약간 투명 */
+  cursor: pointer;
+}
+
+/* 선택: 살짝 흔들리는 느낌 (원하면 빼도 됨) */
+.enter-img:hover {
+  animation: shake 0.2s linear 1;
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 1px); }
+  75% { transform: translate(1px, 2px); }
+  100% { transform: translate(0px, 0px); }
+}
