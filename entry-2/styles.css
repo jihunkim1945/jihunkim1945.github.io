@@ -5,7 +5,6 @@ body {
   margin: 0;
 }
 
-/* 한 화면 전체를 가로 스크롤 없이 꽉 차게 */
 table {
   width: 100%;
   height: 100vh;
@@ -29,7 +28,6 @@ a:hover {
   color: #FF742B;
 }
 
-/* 중앙 눈 이미지 */
 .image {
   position: fixed;
   width: 400px; 
@@ -56,8 +54,17 @@ a:hover {
   color: #FF742B;
 }
 
-/* 가로폭 커질 때 넘칠 경우 대비 */
 .wide-wrapper {
   width: 100%;
   overflow-x: hidden;
+}
+.preview-img {
+  position: fixed;
+  width: 300px;
+  padding: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  z-index: 999;
 }
