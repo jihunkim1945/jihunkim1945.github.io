@@ -1,100 +1,118 @@
-body {
-  margin: 0;
-  background: #233D4D;
-  color: #F5EFE7;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-}
 
+    :root{
+      --bg:#233D4D;
+      --text:#F5EFE7;
+      --accent:#FE7F2D;
+    }
 
+    *{box-sizing:border-box;}
 
-.hero {
-  position: relative;
-  height: 80vh;
-  padding: 40px 20px;
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Favorit",-apple-system,system-ui,Helvetica,Arial,sans-serif;
+    }
 
-  /* 👉 여기서 히어로 이미지 한 장 고정 */
-  background-image: url("(20).jpeg");
-  background-size: cover;
-  background-position: center;
+    .wrap{
+      min-height:100vh;
+      padding:40px 6vw 60px;
+      display:flex;
+      justify-content:center;
+    }
 
-  display: flex;
-  align-items: flex-end;
-}
+    .col{
+      max-width:70ch;
+      font-size:20px;
+      line-height:1.45;
+    }
 
-/* 가운데 해가 뜨는 것 같은 그라데이션 */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    .title{
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:24px;
+    }
 
-  /* 가운데 밝고 주변 어두운 radial-gradient */
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.45),
-    rgba(0, 0, 0, 0.85)
-  );
-}
+    p{
+      margin:0 0 18px;
+    }
 
-.hero-inner {
-  position: relative; /* overlay 위에 올라오게 하려고 */
-  max-width: 70ch;    /* 한 줄 길이 적당히 제한 */
-}
+    a.back{
+      display:inline-block;
+      margin-top:24px;
+      color:var(--text);
+      text-decoration:none;
+      border-bottom:1px solid rgba(245,239,231,0.6);
+    }
+    a.back:hover{
+      color:var(--accent);
+      border-color:var(--accent);
+    }
 
-/* 제목 */
-h1 {
-  font-size: 40px;
-  margin: 0 0 12px;
-  font-weight: 800;
-}
+    /* === Translation Tooltip === */
+    .tt{
+      position:relative;
+      cursor:help;
+      border-bottom:1px dotted rgba(245,239,231,0.6);
+    }
+    .tt::after{
+      content:attr(data-kr);
+      position:absolute;
+      left:50%;
+      top:120%;
+      transform:translateX(-50%) translateY(6px);
+      background:#000;
+      color:#fff;
+      font-size:12px;
+      padding:6px 8px;
+      border-radius:4px;
+      white-space:nowrap;
+      opacity:0;
+      pointer-events:none;
+      transition:.2s;
+      z-index:10;
+    }
+    .tt:hover::after{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+    }
 
-.title-wrap {
-  position: relative;
-  display: inline-block;
-}
+    /* === I 스타일 === */
+    .letter-i{
+      -webkit-text-stroke:1px var(--text);
+      color:transparent;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .letter-i:hover{
+      color:var(--text);
+      background:rgba(254,127,45,0.18);
+    }
 
+    /* === Hover Image === */
+    .hover-photo{
+      position:fixed;
+      display:none;
+      pointer-events:none;
+      z-index:1000;
+      border:1px solid rgba(245,239,231,0.7);
+      background:#000;
+    }
+    .hover-photo img{
+      max-width:220px;
+      max-height:220px;
+      display:block;
+      object-fit:cover;
+    }
+    .hover-photo.show{
+      display:block;
+    }
 
-.title-image {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 10px;
-  display: none; 
-}
-
-
-.title-image img {
-  display: block;
-  width: 1000px;  
-  height: auto;
-  
-}
-
-
-.title-wrap:hover .title-image {
-  display: block;
-}
-
-
-.hero p {
-  margin: 0;
-}
-
-
-
-main {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px 60px;
-  background: #233D4D;
-}
-
-article {
-  max-width: 70ch;
-}
-
-p {
-  margin: 14px 0;
-}
+    @media (max-width:720px){
+      .col{font-size:18px;}
+      .title{font-size:28px;}
+      .hover-photo img{
+        max-width:180px;
+        max-height:180px;
+      }
+    }

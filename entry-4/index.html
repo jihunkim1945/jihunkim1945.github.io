@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href ="styles.css" rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entry 4 — American Dream</title>
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="wrap">
+  <div class="wrap">
     <div class="col">
-      
-    
+
+      <!-- 언어 토글 -->
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">ENGLISH</button>
+        <button class="lang-btn" data-lang="ko">KOREAN</button>
+      </div>
+
+      <!-- American Dream 이미지 오버레이 -->
       <span class="hover-box">
         <span class="trigger">American Dream</span>
         <div class="overlay">
@@ -24,17 +29,50 @@
       </span>
       <br><br>
 
-      The United States is often praised as the “land of freedom,” where individual rights and democratic values are protected by law. Its diversity allows immigrants from all over the world to find that reflect their own cultures while also engaging with new perspectives. The U.S. economy, as one of the largest and most dynamic in the world, offers opportunities for innovation, entrepreneurship, and upward mobility. For many, the country represents the possibility of building a better life through education, career advancement, and personal independence. The American Dream, though complex, continues to serve as a symbol of hope and aspiration for millions.
-      <br><br>
+      <!-- ENGLISH 텍스트 -->
+      <div id="text-en" class="text-block active">
+        <p>
+          The United States is often praised as the “land of freedom,” where individual rights and democratic values are protected by law. Its diversity allows immigrants from all over the world to find communities that reflect their own cultures while also engaging with new perspectives. The U.S. economy, as one of the largest and most dynamic in the world, offers opportunities for innovation, entrepreneurship, and upward mobility. For many, the country represents the possibility of building a better life through education, career advancement, and personal independence. The American Dream, though complex, continues to serve as a symbol of hope and aspiration for millions.
+        </p>
 
-      Beneath this idealized image, however, lie serious challenges. Economic inequality is widespread, making it difficult for many immigrants and citizens alike to achieve stability. Social divisions based on race, class, and immigration status often lead to discrimination and systemic barriers. Healthcare and education, while advanced, are costly and can deepen financial burdens, especially for newcomers. Many immigrants also experience cultural isolation, alienation, and pressure to assimilate, which creates psychological strain. Thus, while America offers freedom and opportunity, it also presents hidden struggles that reveal the gap between promise and reality.
-      <br><br>
+        <p>
+          Beneath this idealized image, however, lie serious challenges. Economic inequality is widespread, making it difficult for many immigrants and citizens alike to achieve stability. Social divisions based on race, class, and immigration status often lead to discrimination and systemic barriers. Healthcare and education, while advanced, are costly and can deepen financial burdens, especially for newcomers. Many immigrants also experience cultural isolation, alienation, and pressure to assimilate, which creates psychological strain. Thus, while America offers freedom and opportunity, it also presents hidden struggles that reveal the gap between promise and reality.
+        </p>
 
-      My father had always hungered for education. Perhaps it was the lack of it in his own youth, or the boundaries he could never cross. He wanted us to see a larger world. That was why my parents chose America. He remained in Korea. I left with my mother, my twin brother, and my sister. The first days were harsh. My twin and I did not know the alphabet. We had not chosen this journey; we had only been carried across an ocean. My sister seemed to belong to my father’s vision. It was she who had first spoken of study abroad. She adapted, or at least looked as if she did. At school I was afraid. I felt abandoned in a wilderness where no language answered me. Only my brother stood close. Our teacher was known for her bitterness. She was old, impatient, and her anger fell easily. She made a girl, who barely spoke Korean, translate for us. I still remember her troubled face. At lunch, our food became a spectacle. The others laughed without knowing the weight of their words. My mother heard, and her anger stayed inside her. In a foreign land, she could not raise her voice. Still, she went to the school. The next year we were placed in a Korean class. For a moment, we could breathe. But relief was short. The others studied with a fire we could not follow. We went to lessons each evening until night. We were only in the third grade. Fatigue spread through us. My mother decided to leave. She chose Canada, the country called peaceful. Our years in America ended like that—suddenly, and yet with the feeling that they had lasted forever.
-      <br><br>
+        <p>
+          My father had always hungered for education. Perhaps it was the lack of it in his own youth, or the boundaries he could never cross. He wanted us to see a larger world. That was why my parents chose America. He remained in Korea. <span class="letter-i">I</span> left with my mother, my twin brother, and my sister. The first days were harsh. My twin and <span class="letter-i">I</span> did not know the alphabet. We had not chosen this journey; we had only been carried across an ocean. My sister seemed to belong to my father’s vision. It was she who had first spoken of study abroad. She adapted, or at least looked as if she did. At school <span class="letter-i">I</span> was afraid. <span class="letter-i">I</span> felt abandoned in a wilderness where no language answered me. Only my brother stood close. Our teacher was known for her bitterness. She was old, impatient, and her anger fell easily. She made a girl, who barely spoke Korean, translate for us. <span class="letter-i">I</span> still remember her troubled face. At lunch, our food became a spectacle. The others laughed without knowing the weight of their words. My mother heard, and her anger stayed inside her. In a foreign land, she could not raise her voice. Still, she went to the school. The next year we were placed in a Korean class. For a moment, we could breathe. But relief was short. The others studied with a fire we could not follow. We went to lessons each evening until night. We were only in the third grade. Fatigue spread through us. My mother decided to leave. She chose Canada, the country called peaceful. Our years in America ended like that—suddenly, and yet with the feeling that they had lasted forever.
+        </p>
+      </div>
 
+      <!-- KOREAN 텍스트 -->
+      <div id="text-ko" class="text-block">
+        <p>
+          미국은 종종 “자유의 나라”라고 불리며, 개인의 권리와 민주주의적 가치가 법으로 보장되는 곳이라고 찬양된다. 다양한 인종과 문화가 모여 사는 이곳에서 이민자들은 자신의 문화와 닮은 공동체를 찾는 동시에, 전혀 다른 시선과 관점을 마주하게 된다. 세계에서 가장 크고 역동적인 경제 중 하나로서, 미국은 혁신과 창업, 계층 상승의 기회를 제공한다. 많은 이들에게 이 나라는 교육, 커리어, 개인의 독립을 통해 더 나은 삶을 만들 수 있다는 가능성 그 자체를 의미한다. 복잡한 현실에도 불구하고, ‘아메리칸 드림’은 여전히 수많은 사람들에게 희망과 열망의 상징으로 남아 있다.
+        </p>
+
+        <p>
+          그러나 이런 이상화된 이미지 아래에는 여러 문제들이 숨어 있다. 경제적 불평등은 광범위하게 퍼져 있어, 이민자뿐만 아니라 시민들조차도 안정적인 삶을 꾸리기 어렵게 만든다. 인종, 계급, 이민자 신분에 따른 사회적 분열은 차별과 구조적 장벽으로 이어진다. 의료와 교육은 높은 수준이지만, 그만큼 비용이 비싸서 특히 새로 온 이들에게는 큰 부담이 된다. 많은 이민자들은 문화적 고립감, 소외감, 동화되어야 한다는 압박 속에서 심리적인 피로를 겪는다. 결국 미국은 자유와 기회를 약속하는 동시에, 그 약속과 현실의 간극을 적나라하게 드러내는 장소이기도 하다.
+        </p>
+
+        <p>
+          아버지는 늘 교육에 대한 갈증을 품고 살았다. 젊은 시절에 충분한 교육을 받지 못했던 경험 때문이었는지, 넘을 수 없던 경계들 때문이었는지는 알 수 없다. 다만 그는 우리가 더 넓은 세상을 보길 원했다. 그래서 부모님은 미국을 선택했다. 아버지는 한국에 남았고, 나는 어머니, 쌍둥이 오빠, 누나와 함께 미국으로 떠났다. 처음의 시간은 거칠고 낯설었다. 쌍둥이와 나는 알파벳조차 알지 못했다. 이 여행은 우리가 선택한 길이 아니었고, 그저 떠밀리듯 건너온 바다일 뿐이었다. 누나는 아버지의 꿈에 더 가까운 존재처럼 보였다. 유학을 가장 먼저 입 밖에 꺼낸 사람도 그녀였다. 누나는 이곳에 적응한 듯 보였다. 적어도 겉으로는 그랬다. 학교에서 나는 항상 두려움 속에 있었다. 어떤 언어도 나에게 대답해 주지 않는 황무지에 혼자 버려진 느낌이었다. 곁에 서 있던 것은 오직 오빠뿐이었다.
+        </p>
+
+        <p>
+          우리 반 담임은 까칠한 성격으로 유명한 사람이었다. 나이가 많았고, 인내심이 부족했고, 화를 쉽게 냈다. 그는 한국어도 서툰 한 여자아이에게 우리를 대신 통역하라고 시켰다. 나는 아직도 그 아이의 불안한 표정을 기억한다. 점심시간에는 우리가 가져온 도시락이 구경거리가 되었다. 아이들은 자신들의 말이 얼마나 무거운지 모른 채 웃었다. 그 이야기를 들은 엄마의 분노는 속으로만 맴돌았다. 낯선 나라에서, 엄마는 쉽게 목소리를 높일 수 없었다. 그럼에도 엄마는 학교를 찾아갔다. 이듬해 우리는 한국반으로 옮겨졌다. 잠시나마 숨을 고를 수 있었다. 그러나 안도감은 오래 가지 않았다. 다른 아이들은 우리가 따라잡을 수 없을 만큼 치열하게 공부했다. 우리는 초등학교 3학년이었지만, 매일 밤늦게까지 학원에 다녔다. 피로는 서서히 온몸으로 번져 갔다. 결국 엄마는 떠나기로 결정했다. 그녀는 ‘평화로운 나라’라고 불리던 캐나다를 선택했다. 미국에서의 우리의 시간은 그렇게 끝났다. 너무 갑작스럽게, 그러나 영원히 끝나지 않을 것 같던 기억만 남긴 채.
+        </p>
+      </div>
+
+      <br><br>
       <a href="../entry-2/index.html">← back</a>
     </div>
   </div>
+
+  <!-- I 호버 시 뜨는 작은 사진 -->
+  <figure id="hoverPhoto" class="hover-photo">
+    <img src="" alt="hover image">
+  </figure>
+
+  <script src="script.js"></script>
 </body>
 </html>

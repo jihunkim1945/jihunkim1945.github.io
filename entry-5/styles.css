@@ -1,90 +1,135 @@
-:root {
-  --navy: #233D4D;
-  --ivory: #F5EFE7;
-  --orange: #FE7F2D;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    :root{
+      --bg:#233D4D;
+      --text:#F5EFE7;
+      --accent:#FE7F2D;
+    }
 
-html, body {
-  height: 100%;
-  background:
-    radial-gradient(1200px 600px at 50% 15%,
-      rgba(254,127,45,0.25) 0%,
-      rgba(254,127,45,0.08) 30%,
-      rgba(254,127,45,0.02) 60%,
-      rgba(0,0,0,0) 100%
-    ),
-    #233D4D;
-  color: #F5EFE7;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.5;
-}
+    *{box-sizing:border-box;}
 
-.wrap {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 0;
-}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Favorit", -apple-system, system-ui, Helvetica, Arial, sans-serif;
+    }
 
-.col {
-  width: 100%;
-  text-align: justify;
-  padding: 0 40px;
-}
+    .wrap{
+      min-height:100vh;
+      padding:40px 6vw 60px;
+      display:flex;
+      justify-content:center;
+    }
 
-.hover-box {
-  position: relative;
-  display: inline-block;
-}
+    .col{
+      max-width:70ch;
+      font-size:20px;
+      line-height:1.4;
+    }
 
-.trigger {
-  color: var(--orange);
-  cursor: pointer;
-}
+    .title{
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:20px;
+    }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.3);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
+    /* 한/영 겹치는 영역 전체 */
+    .stack{
+      position:relative;
+    }
 
-.overlay img {
-  width: min(75vw, 950px);
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-  pointer-events: none;
-}
+    /* 영어 텍스트는 기본 흐름 */
+    .en-layer{
+      position:relative;
+      z-index:1;
+    }
 
-.hover-box:hover .overlay {
-  opacity: 1;
-}
+    /* 한국어 레이어: 영어 위에 딱 겹쳐서 올라감 */
+    .ko-layer{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      color:#fff;
+      font-weight:800;
+      z-index:2;
+      pointer-events:none; /* 클릭 이벤트는 영어쪽으로 가게 */
+      transition:transform .6s ease, opacity .6s ease;
+    }
 
-a {
-  color: var(--orange);
-  text-decoration: none;
-}
+    /* 한글 날아간 상태 (body에 ko-hidden 붙을 때) */
+    body.ko-hidden .ko-layer{
+      transform:translateY(-50px);
+      opacity:0;
+      pointer-events:none;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    p{
+      margin:0 0 14px;
+    }
 
+    a.back{
+      display:inline-block;
+      margin-top:24px;
+      color:var(--text);
+      text-decoration:none;
+      border-bottom:1px solid rgba(245,239,231,0.6);
+      padding-bottom:2px;
+    }
+    a.back:hover{
+      color:var(--accent);
+      border-color:var(--accent);
+    }
 
+    /* -------- I 글자 스타일 (비어 있는 아웃라인) -------- */
+    .letter-i{
+      -webkit-text-stroke:1px var(--text);
+      color:transparent;
+      font-weight:900;
+      cursor:pointer;
+    }
 
+    .letter-i:hover{
+      color:var(--text);
+      background:rgba(254,127,45,0.16);
+    }
 
+    /* -------- 호버 이미지 -------- */
+    .hover-photo{
+      position:fixed;
+      display:none;
+      pointer-events:none;
+      z-index:1000;
+      /* 검은 점 안 보이게 투명 처리 */
+      background:transparent;
+      border:none;
+    }
 
+    .hover-photo img{
+      display:block;
+      max-width:220px;
+      max-height:220px;
+      object-fit:cover;
+    }
+
+    .hover-photo.show{
+      display:block;
+    }
+
+    /* 화면이 좁을 때 */
+    @media (max-width:720px){
+      .wrap{
+        padding:24px 16px 40px;
+      }
+      .col{
+        font-size:18px;
+      }
+      .title{
+        font-size:28px;
+      }
+      .hover-photo img{
+        max-width:180px;
+        max-height:180px;
+      }
+    }
+ 

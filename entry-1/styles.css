@@ -1,6 +1,11 @@
+  @font-face{
+  font-family: "ABCFavorit";
+  src: url("../fonts/ABCFavorit-Black.woff2") format("woff2");
+  font-weight: 600;
+}
   :root{ --bg:#233D4D; --orange:#FE7F2D; --cream:#FCF1E3; }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--orange);font-family:Helvetica,Arial,sans-serif;}
+  body{margin:0;background:var(--bg);color:var(--orange);font-family: "ABCFavorit",Helvetica,Arial,sans-serif;}
   .container{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;}
   
   .left{position:relative;padding:48px;color:var(--orange);}

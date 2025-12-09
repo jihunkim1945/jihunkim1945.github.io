@@ -1,75 +1,169 @@
-:root {
-    --navy: #233D4D;
-    --ivory: #F5EFE7;
-    --orange: #FE7F2D;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html, body {
-  height: 100%;
-  background: #233D4D;
-  color: #F5EFE7;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.5;
+:root{
+  --orange:#FE7F2D;
+  --navy:#233D4D;
+  --cream:#F5EFE7;
 }
-  
-.wrap {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 60px 0;
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html, body{
+  height:100%;
+  background:var(--navy);
+  color:var(--cream);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ===== 전체 래퍼 ===== */
+.wrap{
+  min-height:100vh;
+  padding:2vh 0;                 /* 위아래 여백 최소 */
+  display:flex;
+}
+
+.col{
+  width:100%;
+  max-width:none;                /* ✅ 폭 제한 제거 */
+  padding:0 6vw;                 /* 화면 비율 기반 여백 */
+  text-align:justify;
+}
+
+/* ===== 언어 토글 ===== */
+.lang-toggle{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  font-size:12px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+}
+
+.lang-btn{
+  padding:6px 14px;
+  border:1px solid rgba(245,239,231,0.6);
+  background:transparent;
+  color:var(--cream);
+  cursor:pointer;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:var(--navy);
+  border-color:var(--orange);
+}
+
+/* ===== 텍스트 벽 ===== */
+.text-block{
+  display:none;
+  font-size:clamp(22px, 3.2vw, 36px); /* ✅ 크게 */
+  line-height:1.2;
+  text-align:justify;
+  hyphens:auto;
+}
+
+.text-block.active{
+  display:block;
+}
+
+.text-block p{
+  margin-bottom:1.2em;
+}
+
+/* ===== American Dream hover ===== */
+.hover-box{
+  position:relative;
+  display:inline-block;
+  margin-bottom:2rem;
+}
+
+.trigger{
+  border-bottom:1px solid currentColor;
+  cursor:pointer;
+}
+
+.overlay{
+  position:absolute;
+  top:100%;
+  left:0;
+  margin-top:8px;
+  padding:8px;
+  background:rgba(0,0,0,0.85);
+  border:1px solid rgba(245,239,231,0.4);
+  display:flex;
+  gap:6px;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(6px);
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.hover-box:hover .overlay{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+.overlay img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+}
+
+/* ===== I (Entry 8 스타일) ===== */
+.letter-i{
+  -webkit-text-stroke:1.1px var(--cream);
+  color:transparent;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.letter-i:hover{
+  color:var(--cream);
+}
+
+/* ===== I hover image ===== */
+.hover-photo{
+  position:fixed;
+  top:0;
+  left:0;
+  transform:translate(-50%, -100%);
+  display:none;
+  border:1px solid rgba(245,239,231,0.7);
+  background:#000;
+  z-index:1000;
+  pointer-events:none;
+}
+
+.hover-photo.show{
+  display:block;
+}
+
+.hover-photo img{
+  display:block;
+  max-width:220px;
+  height:auto;
+}
+
+/* ===== 링크 ===== */
+a{
+  color:var(--cream);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+/* ===== 모바일 ===== */
+@media (max-width:720px){
+  .col{
+    padding:0 4vw;
   }
 
-  .col {
-    width: 100%;
-    text-align: justify;
-    padding: 0 40px;
+  .text-block{
+    font-size:clamp(20px, 6vw, 28px);
   }
-
-  
-  .hover-box {
-    position: relative;
-    display: inline-block;
-  }
-
-  .trigger {
-    color: var(--orange);
-    cursor: pointer;
-  }
-
-  .overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .overlay img {
-    width: min(75vw, 950px);
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    pointer-events: none;
-  }
-
-  .hover-box:hover .overlay {
-    opacity: 1;
-  }
-
-  a {
-    color: var(--orange);
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
+}

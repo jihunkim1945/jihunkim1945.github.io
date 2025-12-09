@@ -16,11 +16,11 @@ window.addEventListener("scroll", function () {
 
 // 사진 파일 이름들 (entry-9 폴더 기준)
 const images = [
-  "8.JPG",
-  "10.JPG",
-  "11.JPG",
-  "12.JPG",
-  "13.JPG"
+  "8.PNG",
+  "10.PNG",
+  "11.PNG",
+  "12.PNG",
+  "13.PNG"
 ];
 
 const letters = document.querySelectorAll(".letter-i");

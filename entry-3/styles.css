@@ -1,69 +1,137 @@
 :root{
-    --orange:#FE7F2D;
-    --navy:#233D4D;
-    --text:#111;
+  --orange:#FE7F2D;
+  --navy:#233D4D;
+  --text:var(--navy);
+}
+
+/* ABC Favorit 불러오기 (파일 이름/경로는 네 폰트에 맞게 수정) */
+@font-face{
+  font-family:'Favorit';
+  src:
+    url('fonts/ABCFavorit-Regular.woff2') format('woff2'),
+    url('fonts/ABCFavorit-Regular.woff') format('woff');
+  font-weight:400;
+  font-style:normal;
+}
+@font-face{
+  font-family:'Favorit';
+  src:
+    url('fonts/ABCFavorit-Bold.woff2') format('woff2'),
+    url('fonts/ABCFavorit-Bold.woff') format('woff');
+  font-weight:700;
+  font-style:normal;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html, body{
+  height:100%;
+}
+
+body{
+  background:var(--orange);
+  color:var(--text);
+  font-family:'Favorit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 전체 레이아웃: 텍스트 벽 */
+.page{
+  min-height:100vh;
+  padding:32px 20px 40px;
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+}
+
+/* 버튼 */
+.controls{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:16px;
+}
+.controls button{
+  background:var(--navy);
+  color:var(--orange);
+  border:none;
+  padding:6px 14px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  cursor:pointer;
+}
+.controls button:hover{
+  opacity:0.85;
+}
+
+/* 텍스트 벽 */
+.text-body{
+  font-size:clamp(18px, 2.6vw, 26px);
+  line-height:1.3;
+  text-align:justify;
+}
+
+/* JS가 이 span들에 랜덤 transform을 걸어서 흩어뜨림 */
+.piece{
+  display:inline-block;
+  transition:transform 0.8s ease;
+}
+
+/* 카뮈 문장 살짝 기울이기 (선택사항) */
+.camus{
+  font-style:italic;
+}
+
+/* I 글자: 경계만 있고 속은 비워둠 (나중에 JS가 span 하나 골라서 이 클래스 붙여줌) */
+.letter-i{
+  -webkit-text-stroke:1px var(--text);
+  color:transparent;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* I 위에 올리면 안쪽 채워짐 + 살짝 배경 */
+.letter-i:hover{
+  color:var(--text);
+  background:rgba(35,61,77,0.08);
+}
+
+/* I 호버했을 때 나오는 작은 사진 */
+.hover-photo{
+  position:fixed;
+  left:0;
+  top:0;
+  display:none;         /* 기본은 숨김 */
+  pointer-events:none;  /* 이미지 위에 마우스 올라가도 이벤트 안가로채게 */
+  border:1px solid var(--navy);
+  background:#000;
+  z-index:1000;
+}
+
+.hover-photo img{
+  display:block;
+  max-width:220px;
+  max-height:220px;
+  object-fit:cover;
+}
+
+/* 반응형 */
+@media (max-width:720px){
+  .page{
+    padding:20px 14px 30px;
   }
+}
+.entry-header{
+  margin-bottom:32px;
+}
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-
-  html, body{
-    height:100%;
-    background:var(--orange);
-    color:var(--text);
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight:700;
-    font-size:20px;
-    line-height:1.5;
-  }
-
-  .wrap{
-    min-height:100vh;
-    padding:60px 0;
-    display:flex;
-    justify-content:center;
-  }
-
-  .col{
-    width:100%;
-    text-align:justify;
-    padding:0 40px;
-  }
-
-  .about-box{
-    position:relative;
-    display:inline-block;
-  }
-
-  .about-trigger{
-    color:var(--navy);
-    cursor:pointer;
-  }
-
-  .overlay{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:rgba(0,0,0,0.3);
-    opacity:0;
-    pointer-events:none; 
-    transition:opacity 0.3s ease;
-  }
-
-  
-  .about-box:hover .overlay{
-    opacity:1;
-  }
-
-  
-  .overlay img{
-    width:min(70vw, 900px);
-    height:auto;
-    border-radius:6px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.4);
-    pointer-events:none; 
-  }
-
-  a{color:var(--navy); text-decoration:none;}
-  a:hover{text-decoration:underline;}
+.entry-header h1{
+  font-size:clamp(32px, 5vw, 56px);
+  font-weight:700;
+  color:var(--navy);
+  text-transform:uppercase;
+}

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT ME</title>
-    <link href ="styles.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entry 3 — Life as Korean</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
-    <div class="wrap">
-    <div class="col">
-
-      Life as Korean<br><br>
-
-      "I died today. Or, maybe, yesterday; I can’t be sure."<br><br>
+  <div class="page">
+    <!-- 위쪽 컨트롤: 버튼 하나 -->
+    <div class="controls">
+      <button id="assembleBtn">assemble</button>
+    </div>
+<h1>Life as Korean</h1>
+    <!-- 여기 텍스트 벽. JS가 안의 글자를 조각(단어)으로 나눔 -->
+    <div class="text-body" id="textBody">
+      <br><br>
+      <span class="camus">"I died today. Or, maybe, yesterday; I can’t be sure."</span><br><br>
 
       Definition of Immigrant<br>
       Immigration is the international movement of people to a destination country of which they are not usual residents or where they do not possess nationality to settle as permanent residents. Commuters, tourists, and other short-term stays in a destination country do not fall under the definition of immigration or migration; seasonal labour immigration is sometimes included, however. Economically, research suggests that migration can be beneficial both to the receiving and sending countries. The academic literature provides mixed findings for the relationship between immigration and crime worldwide. Research shows that country of origin matters for speed and depth of immigrant assimilation, but that there is considerable assimilation overall for both first- and second-generation immigrants. Discrimination based on nationality is legal in most countries. Extensive evidence of discrimination against foreign-born persons in criminal justice, business, the economy, housing, health care, media, and politics has been found.<br><br>
 
-      <div class="about-box">
-        <span class="about-trigger">About me</span>
-        <div class="overlay">
-    
-          <img src="IMG_54643.jpg" alt="About me photo">
-        </div>
-      </div><br>
-      I was born on February 18, 2003, at Grace Hospital in Ilsan, Gyeonggi Province. I was a twin. I do not remember that day, but I know the place and the date. When I turned five, we moved to Guri. The apartment was different, but life went on as usual. Not long after, when I was old enough for kindergarten, we moved again, this time to Namyangju. There I finished kindergarten and entered elementary school. I stayed for about a year and a half. Then, in the second semester of second grade, my family decided to leave. We left Korea and moved to the United States.<br><br>
-
-      <a href="../entry-2/index.html">← back</a>
+      <!-- 여기 영어 본문 중 첫 번째 I 를 위한 자리. 
+           이 I 는 나중에 JS가 찾아서 테두리만 있는 I 로 만들어 줄 거야 -->
+      I was born on February 18, 2003, at Grace Hospital in Ilsan, Gyeonggi Province. I was a twin. I do not remember that day, but I know the place and the date. When I turned five, we moved to Guri. The apartment was different, but life went on as usual. Not long after, when I was old enough for kindergarten, we moved again, this time to Namyangju. There I finished kindergarten and entered elementary school. I stayed for about a year and a half. Then, in the second semester of second grade, my family decided to leave. We left Korea and moved to the United States.
     </div>
+
+    <!-- I에 호버했을 때 뜨는 작은 이미지 -->
+    <figure class="hover-photo" id="hoverPhoto">
+      <!-- 파일 이름/경로는 네가 가진 사진에 맞게 수정 -->
+      <img id="hoverImg" src="IMG_54643.jpg" alt="about me image" />
+    </figure>
   </div>
-  
- 
+
+  <script src="script.js"></script>
 </body>
 </html>
