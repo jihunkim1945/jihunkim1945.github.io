@@ -1,0 +1,13 @@
+/* base.css */
+@font-face {
+  font-family: "ABCFavorit";
+  src: url("./fonts/ABCFavorit-Black-Trial.woff") format("woff");
+  font-weight: 900;
+}
+
+body {
+  margin: 0;
+  font-family: "ABCFavorit", Helvetica, Arial, sans-serif;
+  
+  
+}

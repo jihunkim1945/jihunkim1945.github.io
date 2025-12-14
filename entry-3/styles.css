@@ -5,22 +5,8 @@
 }
 
 /* ABC Favorit 불러오기 (파일 이름/경로는 네 폰트에 맞게 수정) */
-@font-face{
-  font-family:'Favorit';
-  src:
-    url('fonts/ABCFavorit-Regular.woff2') format('woff2'),
-    url('fonts/ABCFavorit-Regular.woff') format('woff');
-  font-weight:400;
-  font-style:normal;
-}
-@font-face{
-  font-family:'Favorit';
-  src:
-    url('fonts/ABCFavorit-Bold.woff2') format('woff2'),
-    url('fonts/ABCFavorit-Bold.woff') format('woff');
-  font-weight:700;
-  font-style:normal;
-}
+
+
 
 *{
   box-sizing:border-box;
@@ -36,6 +22,8 @@ body{
   background:var(--orange);
   color:var(--text);
   font-family:'Favorit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+   font-weight:400;
+  font-style:normal;
 }
 
 /* 전체 레이아웃: 텍스트 벽 */

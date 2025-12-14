@@ -14,20 +14,21 @@ html, body{
   height:100%;
   background:var(--navy);
   color:var(--cream);
-  font-family: Helvetica, Arial, sans-serif;
+ font-weight:200;
+  font-style:normal;
 }
 
 /* ===== 전체 래퍼 ===== */
 .wrap{
   min-height:100vh;
-  padding:2vh 0;                 /* 위아래 여백 최소 */
+  padding:2vh 0;
   display:flex;
 }
 
 .col{
   width:100%;
-  max-width:none;                /* ✅ 폭 제한 제거 */
-  padding:0 6vw;                 /* 화면 비율 기반 여백 */
+  max-width:none;
+  padding:0 6vw;
   text-align:justify;
 }
 
@@ -58,7 +59,7 @@ html, body{
 /* ===== 텍스트 벽 ===== */
 .text-block{
   display:none;
-  font-size:clamp(22px, 3.2vw, 36px); /* ✅ 크게 */
+  font-size:clamp(22px, 3.2vw, 36px);
   line-height:1.2;
   text-align:justify;
   hyphens:auto;
@@ -72,48 +73,14 @@ html, body{
   margin-bottom:1.2em;
 }
 
-/* ===== American Dream hover ===== */
-.hover-box{
-  position:relative;
-  display:inline-block;
-  margin-bottom:2rem;
+/* ===== 제목(hover-box trigger) 밑줄 제거 ===== */
+.hover-box .trigger{
+  text-decoration:none;
 }
 
-.trigger{
-  border-bottom:1px solid currentColor;
-  cursor:pointer;
-}
-
-.overlay{
-  position:absolute;
-  top:100%;
-  left:0;
-  margin-top:8px;
-  padding:8px;
-  background:rgba(0,0,0,0.85);
-  border:1px solid rgba(245,239,231,0.4);
-  display:flex;
-  gap:6px;
-  opacity:0;
-  pointer-events:none;
-  transform:translateY(6px);
-  transition:opacity .2s ease, transform .2s ease;
-}
-
-.hover-box:hover .overlay{
-  opacity:1;
-  pointer-events:auto;
-  transform:translateY(0);
-}
-
-.overlay img{
-  width:70px;
-  height:70px;
-  object-fit:cover;
-}
-
-/* ===== I (Entry 8 스타일) ===== */
+/* ===== 본문 속 I ===== */
 .letter-i{
+  display:inline-block;
   -webkit-text-stroke:1.1px var(--cream);
   color:transparent;
   font-weight:900;
@@ -127,24 +94,33 @@ html, body{
 /* ===== I hover image ===== */
 .hover-photo{
   position:fixed;
-  top:0;
   left:0;
-  transform:translate(-50%, -100%);
-  display:none;
+  top:0;
+  transform: translate(20px, 20px);
+  width:180px;
+  opacity:0;
+  pointer-events:none;
   border:1px solid rgba(245,239,231,0.7);
   background:#000;
   z-index:1000;
-  pointer-events:none;
+  transition: opacity 0.15s ease;
 }
 
-.hover-photo.show{
-  display:block;
+.hover-photo.is-visible{
+  opacity:1;
 }
 
 .hover-photo img{
+  width:100%;
   display:block;
-  max-width:220px;
   height:auto;
+}
+
+/* ===== overlay 이미지(제목 hover) ===== */
+.overlay img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
 }
 
 /* ===== 링크 ===== */
@@ -162,7 +138,6 @@ a:hover{
   .col{
     padding:0 4vw;
   }
-
   .text-block{
     font-size:clamp(20px, 6vw, 28px);
   }
